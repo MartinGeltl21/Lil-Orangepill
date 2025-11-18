@@ -47,11 +47,16 @@ const App: React.FC = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start pt-4">
-                <a href="#austrian" className="px-8 py-3 bg-bitcoin-900 dark:bg-bitcoin-600 text-white rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-bitcoin-500 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <a 
+                  href="https://bitcoin.org/bitcoin.pdf" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-bitcoin-900 dark:bg-bitcoin-600 text-white rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-bitcoin-500 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
                   Learn Why
                 </a>
                 <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                  Scroll to Unplug from the Matrix
+                  Read the Whitepaper
                 </span>
               </div>
             </div>

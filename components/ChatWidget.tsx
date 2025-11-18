@@ -9,10 +9,19 @@ const ChatWidget: React.FC = () => {
     { role: 'model', text: "Welcome to the Rabbit Hole. I am your Bitcoin guide. Ask me why money is broken, or what '21 million' means.", timestamp: new Date() }
   ]);
   const [loadingState, setLoadingState] = useState<LoadingState>(LoadingState.IDLE);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  
+  // Reference to the scrollable container instead of a bottom element
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesContainerRef.current) {
+      const container = messagesContainerRef.current;
+      // Scroll the container directly, avoiding global window scroll jumps
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
   };
 
   useEffect(() => {
@@ -60,7 +69,10 @@ const ChatWidget: React.FC = () => {
       </div>
 
       {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <div 
+        ref={messagesContainerRef}
+        className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+      >
         {messages.map((msg, idx) => (
           <div
             key={idx}
@@ -88,7 +100,6 @@ const ChatWidget: React.FC = () => {
             </div>
           </div>
         )}
-        <div ref={messagesEndRef} />
       </div>
 
       {/* Input Area */}
