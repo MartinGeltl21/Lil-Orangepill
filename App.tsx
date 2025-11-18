@@ -24,7 +24,7 @@ const App: React.FC = () => {
         </button>
 
         {/* Hero Section with Chatbot */}
-        <header className="relative min-h-screen flex items-center justify-center px-6 py-12 md:py-0 overflow-hidden">
+        <header className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-24 md:py-0 overflow-hidden">
           {/* Background Elements */}
           <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-bitcoin-200 dark:bg-bitcoin-900/20 rounded-full blur-[100px] opacity-40 dark:opacity-20 pointer-events-none transition-colors duration-500"></div>
           <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-orange-200 dark:bg-orange-900/20 rounded-full blur-[80px] opacity-40 dark:opacity-20 pointer-events-none transition-colors duration-500"></div>
@@ -71,7 +71,7 @@ const App: React.FC = () => {
           </div>
 
           {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-bitcoin-400 dark:text-bitcoin-600">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-bitcoin-400 dark:text-bitcoin-600 z-20">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
